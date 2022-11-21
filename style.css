@@ -40,21 +40,64 @@ html, body{
 }
 
 /*// ELEMENTS TO ANIMATE //*/
+.luigi{
+  position:absolute;
+  widows: 60px;
+  height: 60px;
+  top: -100;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 8s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: cubic-bezier(.02,.08,.8,.74);
+}
 
 .mario {
   position:absolute;
   top: -40px;
   left: 0px;
+  width: 60px;
+  height: 60px;
   animation-name: drive;
   animation-duration: 8s;
+  animation-fill-mode: forwards; 
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+.cloud {
+  position: absolute;
+}
+.cloud:nth-child(1){
+  width: 200px;
+  top:120px;
+  opacity: 0.5;
+  animation: wind 80s linear 2s infinite alternate both;
+}
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0;
+  animation: wind 50s linear 0s infinite alternate both;
+}
+
+@keyframes wind {
+  from{
+    left: 100px;
+  }
+  to{
+    left: 500px;
+  }
+  
 }
 
 @keyframes drive {
   from{
-    tansform: translateX(0);
+    tansform: translateX(-2000);
   }
   to {
-    transform: translateX(800px);
+    transform: translateX(1000px);
   }
 }
 
